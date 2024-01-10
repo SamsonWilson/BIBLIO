@@ -16,10 +16,10 @@
     <div class="collapse navbar-collapse"  id="navbarColor01">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="accueil"> Accueil </a>
+          <a class="nav-link" href="<?= URL ?>accueil"> Accueil </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="livres"> Livre </a>
+          <a class="nav-link" href=" <?= URL ?>livres"> Livre </a>
         </li>
       </ul>
     </div>
