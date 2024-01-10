@@ -1,4 +1,17 @@
-<?php ob_start()?>
+<?php ob_start();
+
+if(!empty($_SESSION['alert'])) :
+?>
+<div class="alert alert-<?=$_SESSION['alert']['type']?>" role="alert">
+<?= $_SESSION['alert']['msg'] ?>
+</div>
+
+<?php
+unset($_SESSION['alert']);
+?>
+
+<?php endif; ?>
+
 
 
 <table class="table text-center  table-light">

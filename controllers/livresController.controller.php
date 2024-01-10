@@ -30,6 +30,11 @@ class LivresController{
       $repertoie = "public/image/";
       $nomImageAjoute = $this->ajoutImage($file,$repertoie);
       $this->livreManager->ajoutLivreBd($_POST["titre"],$_POST["nbpage"],$nomImageAjoute);
+
+      $_SESSION["alert"] = [
+        'type' => 'suces',
+        'msg' => 'Ajout de livre'
+      ];
       header('location: '. URL . "livres");
 }
 
@@ -38,6 +43,12 @@ class LivresController{
          $nomImage = $this->livreManager->getlivreByid($id)->getimage();
          unlink("public/image/". $nomImage);
          $this->livreManager->suppressionLivreBD($id);
+
+         $_SESSION["alert"] = [
+            'type' => 'suces',
+            'msg' => 'la suppression a été realiser'
+          ];
+
          header('location: '. URL . "livres");
 
     }
@@ -60,6 +71,12 @@ class LivresController{
             $nomImageToAdd = $imageActuelle;
         }
         $this->livreManager->modificationLivreBD($_POST['identifiant'],$_POST['titre'], $_POST['nbpage'],$nomImageToAdd);
+
+        $_SESSION["alert"] = [
+            'type' => 'suces',
+            'msg' => 'modification realisée'
+          ];
+
         header('location: '. URL . "livres");
     }
 

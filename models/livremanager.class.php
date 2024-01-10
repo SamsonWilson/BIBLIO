@@ -38,6 +38,8 @@ require_once "livre.class.php";
 
         }
 
+        throw new Exception('le livre n\'existe pas ');
+
      }
      public function ajoutLivreBd($titre,$nbpage,$image) {
         $req = " INSERT INTO livres (titre, nbPage, images) values(:titre, :nbpage,:images)";
